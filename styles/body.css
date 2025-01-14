@@ -1,0 +1,10 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-image: url("../resources/images/background.png");
+    background-size: 20%;
+    font-family: 'Quantico', sans-serif;
+}
