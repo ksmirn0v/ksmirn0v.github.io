@@ -33,21 +33,19 @@
     filter: invert(1);
 }
 
-.about-university ul, .about-work ul {
+.title-list {
     list-style-type: none;
 }
 
-.about-university li, .about-work li {
+.title-list > li {
     margin-left: 20px;
-    display: flex;
-    gap: 50px;
 }
 
-.about-university li:not(:last-child), .about-work li:not(:last-child) {
+.title-list > li:not(:last-child) {
     margin-bottom: 2px;
 }
 
-.about-work li span {
+.title-list > li > span {
     display: inline-block;
 }
 
@@ -59,4 +57,65 @@
 .months-and-years {
     display: grid;
     grid-template-columns: repeat(6, 40px) auto;
+}
+
+.job-title {
+    position: relative;
+
+    --tooltip-content: "expand";
+    --tooltip-opacity: 1;
+    --tooltip-visibility: hidden;
+}
+
+.job-title:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.job-title::before {
+    position: absolute;
+    content: var(--tooltip-content);
+    left: -10px;
+    bottom: 5px;
+    opacity: var(--tooltip-opacity);
+    transition: opacity 0.2s ease;
+    background-color: rgba(253, 250, 242, 90%);
+    padding: 1px 5px;
+    border: 1px solid #cd8d53;
+    border-radius: 5px;
+    font-weight: normal;
+    visibility: var(--tooltip-visibility);
+}
+
+.job-description {
+    display: block;
+    border-left: 2px solid #cd8d53;
+    border-bottom: 2px solid #cd8d53;
+    border-right: 2px solid #cd8d53;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(rgba(253, 250, 242, 95%), #cd8d5377);
+}
+
+.job-description > ul {
+    list-style-type: none;
+    padding: 0 0 0 20px;
+}
+
+.job-description li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.job-description li:first-child {
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.job-description li:last-child {
+    margin-bottom: 10px;
+}
+
+.job-description p {
+    margin: 15px 0 10px 20px;
+    font-size: 0.8em;
+    font-style: italic;
 }
